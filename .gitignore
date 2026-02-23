@@ -1,0 +1,47 @@
+# OpenClaw Configuration Secrets
+.openclaw/
+openclaw.json
+openclaw.json.bak*
+credentials/
+telegram/  # If it contains tokens
+devices/   # Device-specific configs
+
+# Plugin Data (may contain sensitive info)
+.openclaw-plugins/
+continuity/data/
+graph/data/
+stability/data/
+memory/
+
+# Logs (may contain sensitive info)
+logs/
+*.log
+syslog
+
+# Cache and temporary files
+.cache/
+node-llama-cpp/
+*.tgz
+*.tar.gz
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# OS-specific
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Backup scripts with hardcoded paths or keys
+backup-workspace.sh
+auto_backup.sh
+
+# Private repository references
+*YOUR-PRIVATE-REPO*
