@@ -4,6 +4,8 @@
 
 This guide demonstrates a complete, production-ready OpenClaw setup optimized for edge deployment without API costs.
 
+**Repository:** https://github.com/ether-btc/openclaw-pi5-setup
+
 ---
 
 ## 📋 Table of Contents
