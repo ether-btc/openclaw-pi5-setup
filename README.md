@@ -82,16 +82,16 @@ npm install -g openclaw
 # 2. Configure OpenClaw
 openclaw configure
 
-# 3. Verify installation
-openclaw status
+# 3. Run the setup script for local embeddings
+git clone https://github.com/ether-btc/openclaw-pi5-setup.git
+cd openclaw-pi5-setup
+./scripts/setup-local-embeddings.sh
 
-# 4. Add local embeddings to config (see Step-by-Step section 4)
-
-# 5. Restart gateway (will auto-restart)
+# 4. Restart gateway (will auto-restart if running)
 openclaw gateway restart
 
-# 6. Verify memory system
-openclaw memory status --deep
+# 5. Verify memory system
+openclaw memory status
 ```
 
 **Expected output after setup:**
