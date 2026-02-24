@@ -824,7 +824,8 @@ These conventions significantly improve memory reliability (99% vs 70%) and sear
 |----------|---------|----------------|
 | [README.md](README.md) | Complete setup guide | Installation, configuration, troubleshooting |
 | [docs/01-local-embeddings-setup.md](docs/01-local-embeddings-setup.md) | Local embeddings details | Model probe, configuration, performance |
-| [docs/02-auto-backup-setup.md](docs/02-auto-backup-setup.md) | Backup system | GitHub integration, cron, recovery |
+| [docs/02-auto-backup-setup.md](docs/02-auto-backup-setup.md) | Basic backup system | GitHub integration, cron, recovery |
+| [docs/02b-advanced-backup.md](docs/02b-advanced-backup.md) | Advanced backup (Phoenix Shield) | Pre-flight checks, retry logic, config file |
 | [docs/03-metacognitive-suite.md](docs/03-metacognitive-suite.md) | Plugin integration | Stability, Continuity, Graph |
 | [docs/04-troubleshooting-guide.md](docs/04-troubleshooting-guide.md) | Common issues | Memory, gateway, backup, plugin problems |
 | [docs/05-memory-conventions.md](docs/05-memory-conventions.md) | Advanced conventions | Amenti + Drift-Memory patterns |
