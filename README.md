@@ -39,12 +39,12 @@ This setup provides:
 
 | Component | Status | Notes |
 |-----------|--------|-------|
-| Local embeddings | ✅ Working | 768-dim vectors, 58 chunks indexed |
+| Local embeddings | ✅ Working | 768-dim vectors, embeddinggemma-300m |
 | Semantic search | ✅ Working | Hybrid BM25 + vector search |
 | Keyword search | ✅ Working | Full-text search (FTS5) |
-| Auto backup | ✅ Active | Daily at 2am CET |
-| Plugins | ✅ Active | Stability, Continuity, Graph |
-| Memory conventions | ✅ Active | Rich tagging, confidence scoring, Q-values |
+| Auto backup | ✅ Active | Git-based, daily at 2am CET |
+| Hard enforcement | ✅ Active | Memories auto-injected before each response |
+| Plugins | ✅ Active | openalerts, memory-hard-enforcement |
 
 ---
 
@@ -313,6 +313,64 @@ Results are merged and weighted:
 - **Subsequent searches:** Fast (< 100ms for 16 files)
 - **Embedding cache:** Reduces redundant computations
 - **Incremental updates:** Only changed files re-indexed
+
+---
+
+## Memory Hard Enforcement
+
+### Overview
+
+The Memory Hard Enforcement plugin automatically injects relevant memories before every response — no LLM decision required. This dramatically improves memory reliability.
+
+| Approach | How It Works | Reliability |
+|----------|--------------|-------------|
+| **Soft** (default) | LLM must call `memory_search` | ~60-70% |
+| **Hard** (this plugin) | Hook injects automatically | ~99% |
+
+### Configuration
+
+Add to `~/.openclaw/openclaw.json`:
+
+```json
+{
+  "plugins": {
+    "entries": {
+      "memory-hard-enforcement": {
+        "enabled": true,
+        "config": {
+          "maxResults": 5,
+          "minScore": 0.3,
+          "timeoutMs": 15000
+        }
+      }
+    }
+  }
+}
+```
+
+### Controls
+
+```bash
+# CLI commands
+openclaw memory:hard-enforcement status
+openclaw memory:hard-enforcement enable
+openclaw memory:hard-enforcement disable
+openclaw memory:hard-enforcement toggle
+
+# Quick command (in chat)
+/hme
+```
+
+### Failsafe Design
+
+The plugin never breaks your agent run:
+
+- ✅ All errors caught and logged
+- ✅ Timeout protection with graceful fallback
+- ✅ Skip patterns for short messages ("hi", "ok", etc.)
+- ✅ Empty results = no injection (transparent)
+
+**Full documentation:** [docs/06-memory-hard-enforcement.md](docs/06-memory-hard-enforcement.md)
 
 ---
 
@@ -760,7 +818,7 @@ These conventions significantly improve memory reliability (99% vs 70%) and sear
 - Confidence-aware retrieval (distinguishes facts from inferences)
 - Automatic session distillation (no manual note-taking required)
 
-### Documentation Index
+## Documentation Index
 
 | Document | Purpose | Topics Covered |
 |----------|---------|----------------|
@@ -770,6 +828,8 @@ These conventions significantly improve memory reliability (99% vs 70%) and sear
 | [docs/03-metacognitive-suite.md](docs/03-metacognitive-suite.md) | Plugin integration | Stability, Continuity, Graph |
 | [docs/04-troubleshooting-guide.md](docs/04-troubleshooting-guide.md) | Common issues | Memory, gateway, backup, plugin problems |
 | [docs/05-memory-conventions.md](docs/05-memory-conventions.md) | Advanced conventions | Amenti + Drift-Memory patterns |
+| [docs/06-memory-hard-enforcement.md](docs/06-memory-hard-enforcement.md) | Auto memory injection | Plugin architecture, configuration, failsafe design |
+| [docs/07-qdrant-mcp-pi5-assessment.md](docs/07-qdrant-mcp-pi5-assessment.md) | Research assessment | Third-party memory systems, lessons learned |
 
 ---
 
@@ -795,7 +855,7 @@ This guide is documentation. OpenClaw has its own license (see https://github.co
 
 ---
 
-**Generated:** 2026-02-23
+**Generated:** 2026-02-24
 **Target Platform:** Raspberry Pi 5 (8GB RAM)
-**OpenClaw Version:** 2026.2.22-2
-**Tested distro:** Debian-based Linux
+**OpenClaw Version:** 2026.2.24
+**Tested distro:** Debian Bookworm (ARM64)
