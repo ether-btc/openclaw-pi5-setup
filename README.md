@@ -17,7 +17,10 @@ This guide demonstrates a complete, production-ready OpenClaw setup optimized fo
 5. [Local Embeddings Setup](#local-embeddings-setup)
 6. [Automatic Backup System](#automatic-backup-system)
 7. [Metacognitive Suite](#metacognitive-suite)
-8. [Configuration Reference](#configuration-reference)
+8. [Memory History](#memory-history)
+9. [Memory Reranker](#memory-reranker)
+10. [Memory Consolidation](#memory-consolidation)
+11. [Configuration Reference](#configuration-reference)
 9. [Troubleshooting](#troubleshooting)
 10. [Agent-Compatible Instructions](#agent-compatible-instructions)
 
@@ -34,6 +37,9 @@ This setup provides:
 - ✅ **Raspberry Pi optimized** - 6.3GB free RAM, 19GB disk space used efficiently
 - ✅ **Privacy-first** - All data stored locally (no external services)
 - ✅ **Enhanced memory conventions** - Rich tagging, confidence scoring, Q-value tracking
+- ✅ **Memory history** - Audit trail for all memory mutations (v1.6.0+)
+- ✅ **Memory reranker** - Post-retrieval ranking by importance/recency/anchors
+- ✅ **Memory consolidation** - Duplicate detection with rule-based merge
 
 ### What Works
 
@@ -537,6 +543,64 @@ git clone https://github.com/CoderofTheWest/openclaw-metacognitive-suite.git
 
 ---
 
+## Memory History
+
+Tracks all memory mutations for debugging and audit.
+
+### Features
+- Records: add, update, delete, merge, decay, recall
+- Automatic via hard enforcement plugin (v1.6.0+)
+- 90-day retention, configurable
+
+### Usage
+```bash
+memory-history.sh query      # View history
+memory-history.sh stats     # Show statistics
+memory-history.sh cleanup   # Remove old entries
+```
+
+See `docs/08-memory-history.md` for details.
+
+---
+
+## Memory Reranker
+
+Post-retrieval ranking to improve result quality.
+
+### How It Works
+- Boosts by: importance score, recency, anchor matches
+- Example: `0.659 → 0.989` (recency boost applied)
+
+### Usage
+```bash
+hybrid-search-reranked.sh "query"  # Search + rerank
+memory-rerank.sh test              # Test reranker
+```
+
+See `docs/09-memory-reranker.md` for details.
+
+---
+
+## Memory Consolidation
+
+Detects duplicate/similar memories for cleanup.
+
+### Features
+- Vector similarity detection (>0.85 threshold)
+- Flags pairs for manual review
+- Logs merge decisions
+
+### Usage
+```bash
+memory-consolidation.sh check MEMORY.md  # Check one file
+memory-consolidation.sh run              # Full scan
+memory-consolidation.sh stats            # Show stats
+```
+
+See `docs/10-memory-consolidation.md` for details.
+
+---
+
 ## Configuration Reference
 
 ### openclaw.json Structure
@@ -831,6 +895,9 @@ These conventions significantly improve memory reliability (99% vs 70%) and sear
 | [docs/05-memory-conventions.md](docs/05-memory-conventions.md) | Advanced conventions | Amenti + Drift-Memory patterns |
 | [docs/06-memory-hard-enforcement.md](docs/06-memory-hard-enforcement.md) | Auto memory injection | Plugin architecture, configuration, failsafe design |
 | [docs/07-qdrant-mcp-pi5-assessment.md](docs/07-qdrant-mcp-pi5-assessment.md) | Research assessment | Third-party memory systems, lessons learned |
+| [docs/08-memory-history.md](docs/08-memory-history.md) | Memory audit trail | Mutation tracking, cleanup, heartbeat integration |
+| [docs/09-memory-reranker.md](docs/09-memory-reranker.md) | Result ranking | Importance, recency, anchor boosting |
+| [docs/10-memory-consolidation.md](docs/10-memory-consolidation.md) | Duplicate detection | Similarity threshold, merge strategies |
 
 ---
 
