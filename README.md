@@ -9,6 +9,9 @@ This guide demonstrates a complete, production-ready OpenClaw setup optimized fo
 ---
 
 ## 📋 Table of Contents
+12. [Persona System](#-todays-features)
+13. [Model Manager](#-todays-features)
+14. [Smart Monitor](#-todays-features)
 
 1. [Overview](#overview)
 2. [System Requirements](#system-requirements)
@@ -25,6 +28,30 @@ This guide demonstrates a complete, production-ready OpenClaw setup optimized fo
 10. [Agent-Compatible Instructions](#agent-compatible-instructions)
 
 ---
+
+## 🚀 Today's Features
+
+*Latest additions to enhance project workflow and model management*
+
+### Persona System
+- **6 specialized personas**: Senior PM, Senior Engineer, Researcher, Reasoner, Architect, Embodied Reactor
+- **Activation script**: `./scripts/activate-project-mode.sh [--embodied]`
+- **Delegation matrix**: Route tasks to the right specialized model
+- See [docs/PERSONA-SYSTEM.md](./docs/PERSONA-SYSTEM.md)
+
+### Model Manager
+- **raspi-config style TUI** for model management
+- **Full CRUD**: Add, test, remove models
+- **Health monitoring**: Track model status over time
+- **Auto-discover**: Find available models automatically
+- See [docs/MODEL-MANAGER.md](./docs/MODEL-MANAGER.md)
+
+### Smart Monitor
+- **Token-efficient** subagent health monitoring
+- **Shell-based**: No LLM overhead for health checks
+- **Trigger-activated**: Only runs when needed
+- Replaces wasteful cron polling
+- See [docs/SMART-MONITOR.md](./docs/SMART-MONITOR.md)
 
 ## Overview
 
