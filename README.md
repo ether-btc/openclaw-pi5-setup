@@ -77,7 +77,7 @@ This setup provides:
 | Keyword search | ✅ Working | Full-text search (FTS5) |
 | Auto backup | ✅ Active | Git-based, daily at 2am CET |
 | Hard enforcement | ✅ Active | Memories auto-injected before each response |
-| Plugins | ✅ Active | openalerts, memory-hard-enforcement |
+| Plugins | ✅ Active | memory-hard-enforcement |
 
 ---
 
