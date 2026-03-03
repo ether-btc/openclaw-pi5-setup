@@ -35,7 +35,7 @@ Create `~/backup-workspace.sh`:
 #!/bin/bash
 # Backup OpenClaw workspace to GitHub
 
-WORKSPACE="/home/pi/.openclaw/workspace"
+WORKSPACE="/home/user/.openclaw/workspace"
 BACKUP_LOG="${WORKSPACE}/memory/backup.log"
 DATE=$(date '+%Y-%m-%d %H:%M:%S')
 
@@ -82,7 +82,7 @@ crontab -e
 
 **Add this line:**
 ```
-0 2 * * * TZ='Europe/Berlin' /home/pi/backup-workspace.sh
+0 2 * * * TZ='UTC' /home/user/backup-workspace.sh
 ```
 
 ### Cron Schedule Explanation
@@ -94,7 +94,7 @@ crontab -e
 | Day of month | * | Every day |
 | Month | * | Every month |
 | Day of week | * | Every day of week |
-| TZ | Europe/Berlin | Use CET/CEST timezone |
+| TZ | UTC | Use CET/CEST timezone |
 
 ---
 
@@ -130,7 +130,7 @@ crontab -l
 
 **Expected output:**
 ```
-0 2 * * * TZ='Europe/Berlin' /home/pi/backup-workspace.sh
+0 2 * * * TZ='UTC' /home/user/backup-workspace.sh
 ```
 
 ### Check Last Backup
@@ -326,13 +326,13 @@ chmod +x ~/backup-workspace.sh
 Every 6 hours:
 
 ```
-0 */6 * * * TZ='Europe/Berlin' /home/pi/backup-workspace.sh
+0 */6 * * * TZ='UTC' /home/user/backup-workspace.sh
 ```
 
 Every 2 hours:
 
 ```
-0 */2 * * * TZ='Europe/Berlin' /home/pi/backup-workspace.sh
+0 */2 * * * TZ='UTC' /home/user/backup-workspace.sh
 ```
 
 ### Multiple Repositories
@@ -341,7 +341,7 @@ Backup workspace and config separately:
 
 ```bash
 # Workspace docs (public repo)
-echo "0 2 * * * TZ='Europe/Berlin' ~/backup-workspace.sh" >> /tmp/cronfile
+echo "0 2 * * * TZ='UTC' ~/backup-workspace.sh" >> /tmp/cronfile
 
 # Config (private repo)
 cat >> ~/backup-config.sh << 'EOF'
@@ -352,7 +352,7 @@ git commit -m "Auto-backup config: $(date)"
 git push origin master
 EOF
 chmod +x ~/backup-config.sh
-echo "0 2 * * * TZ='Europe/Berlin' ~/backup-config.sh" >> /tmp/cronfile
+echo "0 2 * * * TZ='UTC' ~/backup-config.sh" >> /tmp/cronfile
 
 crontab /tmp/cronfile
 ```

@@ -153,8 +153,8 @@ crontab -e
 ```
 
 ```
-0 2 * * * TZ='Europe/Berlin' /home/pi/backup-workspace.sh
-0 14 * * * TZ='Europe/Berlin' /home/pi/backup-workspace.sh
+0 2 * * * TZ='UTC' /home/user/backup-workspace.sh
+0 14 * * * TZ='UTC' /home/user/backup-workspace.sh
 ```
 
 ---

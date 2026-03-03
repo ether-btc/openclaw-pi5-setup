@@ -53,9 +53,9 @@ Add to `~/.openclaw/openclaw.json`:
   "plugins": {
     "load": {
       "paths": [
-        "/home/pi/.openclaw-plugins/openclaw-metacognitive-suite/plugins/openclaw-plugin-stability",
-        "/home/pi/.openclaw-plugins/openclaw-metacognitive-suite/plugins/openclaw-plugin-continuity",
-        "/home/pi/.openclaw-plugins/openclaw-metacognitive-suite/plugins/openclaw-plugin-graph"
+        "/home/user/.openclaw-plugins/openclaw-metacognitive-suite/plugins/openclaw-plugin-stability",
+        "/home/user/.openclaw-plugins/openclaw-metacognitive-suite/plugins/openclaw-plugin-continuity",
+        "/home/user/.openclaw-plugins/openclaw-metacognitive-suite/plugins/openclaw-plugin-graph"
       ]
     },
     "entries": {
@@ -379,7 +379,7 @@ Add to agent configuration:
 **Check:**
 ```bash
 # Verify plugin paths exist
-ls -la /home/pi/.openclaw-plugins/openclaw-metacognitive-suite/plugins/
+ls -la /home/user/.openclaw-plugins/openclaw-metacognitive-suite/plugins/
 
 # Check config syntax
 jq . ~/.openclaw/openclaw.json | grep -A5 plugins

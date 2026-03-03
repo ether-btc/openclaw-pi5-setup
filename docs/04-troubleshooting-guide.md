@@ -591,4 +591,4 @@ tail -100 /var/log/syslog
 
 **Last updated:** 2026-02-23
 **Platform:** Raspberry Pi 5 (8GB RAM)
-**OpenClaw version:** 2026.2.22-2
+**OpenClaw version:** 2026.3.3

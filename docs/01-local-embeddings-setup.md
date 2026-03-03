@@ -62,7 +62,7 @@
 | Check | Status | Notes |
 |-------|--------|-------|
 | Install method | ✅ | npm global |
-| OpenClaw version | ✅ | 2026.2.22-2 |
+| OpenClaw version | ✅ | 2026.3.3 |
 | node-llama-cpp version | ✅ | 3.15.1 (in deps) |
 | Prebuilt for arm64 | ✅ | Available |
 

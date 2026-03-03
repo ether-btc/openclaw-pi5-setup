@@ -77,7 +77,7 @@ Both achieve similar RAM efficiency. No change needed.
 
 ### Memory Hard Enforcement Plugin
 
-**Location**: `/home/pi/openclaw/extensions/memory-hard-enforcement/`
+**Location**: `/home/user/openclaw/extensions/memory-hard-enforcement/`
 
 **Features**:
 - Auto-injects memories before every response

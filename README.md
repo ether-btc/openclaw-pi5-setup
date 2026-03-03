@@ -434,7 +434,7 @@ Daily at 2am → Check for changes → Git commit → Push to GitHub
 #!/bin/bash
 # Backup OpenClaw workspace to GitHub
 
-WORKSPACE="/home/pi/.openclaw/workspace"
+WORKSPACE="/home/user/.openclaw/workspace"
 BACKUP_LOG="${WORKSPACE}/memory/backup.log"
 DATE=$(date '+%Y-%m-%d %H:%M:%S')
 
@@ -478,7 +478,7 @@ crontab -e
 
 **Add this line:**
 ```
-0 2 * * * TZ='Europe/Berlin' /home/pi/backup-workspace.sh
+0 2 * * * TZ='UTC' /home/user/backup-workspace.sh
 ```
 
 ### What's Backed Up
@@ -538,9 +538,9 @@ git clone https://github.com/CoderofTheWest/openclaw-metacognitive-suite.git
   "plugins": {
     "load": {
       "paths": [
-        "/home/pi/.openclaw-plugins/openclaw-metacognitive-suite/plugins/openclaw-plugin-stability",
-        "/home/pi/.openclaw-plugins/openclaw-metacognitive-suite/plugins/openclaw-plugin-continuity",
-        "/home/pi/.openclaw-plugins/openclaw-metacognitive-suite/plugins/openclaw-plugin-graph"
+        "/home/user/.openclaw-plugins/openclaw-metacognitive-suite/plugins/openclaw-plugin-stability",
+        "/home/user/.openclaw-plugins/openclaw-metacognitive-suite/plugins/openclaw-plugin-continuity",
+        "/home/user/.openclaw-plugins/openclaw-metacognitive-suite/plugins/openclaw-plugin-graph"
       ]
     },
     "entries": {
@@ -832,7 +832,7 @@ openclaw memory search "backup configuration"
 # Create backup script
 cat > ~/backup-workspace.sh << 'EOF'
 #!/bin/bash
-WORKSPACE="/home/pi/.openclaw/workspace"
+WORKSPACE="/home/user/.openclaw/workspace"
 BACKUP_LOG="${WORKSPACE}/memory/backup.log"
 DATE=$(date '+%Y-%m-%d %H:%M:%S')
 
@@ -860,7 +860,7 @@ EOF
 chmod +x ~/backup-workspace.sh
 
 # Add to cron (if not exists)
-(crontab -l 2>/dev/null | grep -v backup-workspace; echo "0 2 * * * TZ='Europe/Berlin' /home/pi/backup-workspace.sh") | crontab -
+(crontab -l 2>/dev/null | grep -v backup-workspace; echo "0 2 * * * TZ='UTC' /home/user/backup-workspace.sh") | crontab -
 ```
 
 ### Phase 5: Metacognitive Plugins
@@ -871,9 +871,9 @@ git clone https://github.com/CoderofTheWest/openclaw-metacognitive-suite.git ~/.
 
 # Add to config
 jq '.plugins.load.paths = [
-  "/home/pi/.openclaw-plugins/openclaw-metacognitive-suite/plugins/openclaw-plugin-stability",
-  "/home/pi/.openclaw-plugins/openclaw-metacognitive-suite/plugins/openclaw-plugin-continuity",
-  "/home/pi/.openclaw-plugins/openclaw-metacognitive-suite/plugins/openclaw-plugin-graph"
+  "/home/user/.openclaw-plugins/openclaw-metacognitive-suite/plugins/openclaw-plugin-stability",
+  "/home/user/.openclaw-plugins/openclaw-metacognitive-suite/plugins/openclaw-plugin-continuity",
+  "/home/user/.openclaw-plugins/openclaw-metacognitive-suite/plugins/openclaw-plugin-graph"
 ]' ~/.openclaw/openclaw.json > /tmp/openclaw-new.json
 
 mv /tmp/openclaw-new.json ~/.openclaw/openclaw.json

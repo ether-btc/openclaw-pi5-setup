@@ -186,7 +186,7 @@ const result = await tool.execute("hard-enforcement-auto", {
 
 Bundled with OpenClaw source:
 ```
-/home/pi/openclaw/extensions/memory-hard-enforcement/
+/home/user/openclaw/extensions/memory-hard-enforcement/
 ├── index.ts              # Main implementation
 ├── openclaw.plugin.json  # Manifest + config schema
 └── package.json          # Package definition
