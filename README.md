@@ -9,9 +9,6 @@ This guide demonstrates a complete, production-ready OpenClaw setup optimized fo
 ---
 
 ## 📋 Table of Contents
-12. [Persona System](#-todays-features)
-13. [Model Manager](#-todays-features)
-14. [Smart Monitor](#-todays-features)
 
 1. [Overview](#overview)
 2. [System Requirements](#system-requirements)
