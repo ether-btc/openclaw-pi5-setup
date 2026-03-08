@@ -188,6 +188,36 @@ openclaw configure
 # - ~/.openclaw/openclaw.json
 # - ~/.openclaw/workspace/
 # - Default agent configuration
+
+### Step 3b: Configure Exec Security (REQUIRED)
+
+By default, OpenClaw restricts exec commands. Run this to enable full shell access:
+
+```bash
+# Backup config
+cp ~/.openclaw/openclaw.json ~/.openclaw/openclaw.json.backup
+
+# Add exec security (replace YOUR_API_KEY with Brave Search API key)
+jq '.tools = {
+  "profile": "full",
+  "allow": ["*"],
+  "exec": {
+    "host": "gateway",
+    "security": "full",
+    "ask": "off"
+  },
+  "web": {
+    "search": {"enabled": true, "apiKey": "YOUR_API_KEY"},
+    "fetch": {"enabled": true}
+  }
+}' ~/.openclaw/openclaw.json > /tmp/openclaw.json && mv /tmp/openclaw.json ~/.openclaw/openclaw.json
+
+# Restart gateway
+openclaw gateway restart
+```
+
+**Get free API key:** https://brave.com/search/api/
+
 ```
 
 ### Step 4: Configure Local Embeddings
