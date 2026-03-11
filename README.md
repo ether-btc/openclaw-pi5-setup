@@ -703,6 +703,38 @@ See `docs/10-memory-consolidation.md` for details.
 
 ---
 
+## Operational Guide
+
+### Verified Delegation Protocol
+
+All OpenClaw delegation models tested and working as of 2026-03-11:
+
+| Task Type | Model | Invocation |
+|-----------|-------|------------|
+| Coding | qwen3-coder | `agentId: qwen3-coder` |
+| Reasoning | kimik2thinking | `agentId: kimik2thinking` |
+| Fast tasks | minimax-m2.5:free | `model: kilocode/minimax/...` |
+| Heavy reasoning | deepseek-reasoner | `agentId: deepseek-reasoner` |
+| Fast reasoning | glm-4.7 | `model: zai/glm-4.7` |
+
+**Critical:** Use `agentId:` for agent-wrapped models, `model:` for provider-integrated models.
+
+See [docs/delegation-protocol.md](docs/delegation-protocol.md) for complete spawning guidelines and best practices.
+
+### Startup Optimization
+
+For faster CLI startup on ARM/Pi hosts, add to `~/.bashrc`:
+
+```bash
+export NODE_COMPILE_CACHE=/var/tmp/openclaw-compile-cache
+mkdir -p /var/tmp/openclaw-compile-cache
+export OPENCLAW_NO_RESPAWN=1
+```
+
+See [docs/startup-optimization.md](docs/startup-optimization.md) for more details.
+
+---
+
 ## Troubleshooting
 
 ### Memory Status Shows "Provider: none"
