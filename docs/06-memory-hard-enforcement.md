@@ -233,7 +233,7 @@ systemctl --user restart openclaw-gateway
 
 ### Timeouts on First Search
 
-First search loads the embedding model (~500MB). This can take 5-15 seconds on Pi 5.
+First search loads the embedding model (~500MB). This can take 5-15 seconds on Pi 500.
 
 **Solution**: Increase timeout:
 ```json

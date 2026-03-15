@@ -1,6 +1,6 @@
 # Troubleshooting Guide
 
-Complete troubleshooting guide for OpenClaw on Raspberry Pi 5 with local embeddings.
+Complete troubleshooting guide for OpenClaw on Raspberry Pi 500 with local embeddings.
 
 ---
 
@@ -590,5 +590,5 @@ tail -100 /var/log/syslog
 ---
 
 **Last updated:** 2026-02-23
-**Platform:** Raspberry Pi 5 (8GB RAM)
+**Platform:** Raspberry Pi 500 (8GB RAM)
 **OpenClaw version:** 2026.3.3

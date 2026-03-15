@@ -1,6 +1,8 @@
-# OpenClaw on Raspberry Pi 5: Complete Setup Guide
+# OpenClaw on Raspberry Pi 500: Complete Setup Guide
 
-**Deploy OpenClaw with local embeddings, automatic backups, and metacognitive plugins on Raspberry Pi 5 (8GB RAM)**
+**Deploy OpenClaw with local embeddings, automatic backups, and metacognitive plugins on Raspberry Pi 500 (8GB RAM)**
+
+> **Note:** This guide is for the **Raspberry Pi 500** (Rev 1.0). While similar to the Pi 5, the Pi 500 is a distinct model with different specifications. If you're using a Pi 5, the steps are largely the same, but verify your model with `cat /proc/cpuinfo | grep "Model"`.
 
 This guide demonstrates a complete, production-ready OpenClaw setup optimized for edge deployment without API costs.
 
@@ -82,7 +84,7 @@ This setup provides:
 
 ### Hardware
 
-- **Model:** Raspberry Pi 5
+- **Model:** Raspberry Pi 500
 - **RAM:** 8 GB (4 GB may work, untested)
 - **Storage:** 19 GB+ free space (model + data + logs)
 - **Architecture:** ARM64 (aarch64)
@@ -335,7 +337,7 @@ Text → Chunking → Local Model → 768-dim Vectors → SQLite + sqlite-vec �
                            HuggingFace download (one-time)
 ```
 
-### Probe Results (Raspberry Pi 5)
+### Probe Results (Raspberry Pi 500)
 
 | Check | Status | Details |
 |-------|--------|---------|
@@ -1010,6 +1012,6 @@ This guide is documentation. OpenClaw has its own license (see https://github.co
 ---
 
 **Generated:** 2026-02-24
-**Target Platform:** Raspberry Pi 5 (8GB RAM)
+**Target Platform:** Raspberry Pi 500 (8GB RAM)
 **OpenClaw Version:** 2026.2.24
 **Tested distro:** Debian Bookworm (ARM64)

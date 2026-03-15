@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# OpenClaw Local Embeddings Setup Script for Raspberry Pi 5
+# OpenClaw Local Embeddings Setup Script for Raspberry Pi 500
 # Repository: https://github.com/ether-btc/openclaw-pi5-setup
 #
 # Usage:
@@ -10,7 +10,7 @@
 # This script configures OpenClaw with local embeddings using
 # embeddinggemma-300m (no API costs, fully local).
 #
-# Tested on: Raspberry Pi 5, Debian Bookworm, ARM64
+# Tested on: Raspberry Pi 500, Debian Bookworm, ARM64
 # OpenClaw version: 2026.2.24
 #
 

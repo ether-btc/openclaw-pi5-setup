@@ -1,5 +1,5 @@
 #!/bin/bash
-# OpenClaw Complete Setup Script for Raspberry Pi 5
+# OpenClaw Complete Setup Script for Raspberry Pi 500
 # Usage: curl -sL https://raw.githubusercontent.com/USER/openclaw-pi5-setup/main/scripts/setup-complete.sh | bash
 #
 # This script automates the ENTIRE setup process:
@@ -143,7 +143,7 @@ _Define the AI's personality and values._
 Assistant
 
 ## Nature
-Helpful AI assistant running on Raspberry Pi 5
+Helpful AI assistant running on Raspberry Pi 500
 EOF
         
         cat > "$WORKSPACE/USER.md" << 'EOF'
@@ -284,7 +284,7 @@ verify_installation() {
 # Main
 main() {
     echo "============================================"
-    echo "  OpenClaw Complete Setup for Raspberry Pi 5"
+    echo "  OpenClaw Complete Setup for Raspberry Pi 500"
     echo "============================================"
     echo ""
     

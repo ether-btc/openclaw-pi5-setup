@@ -35,7 +35,7 @@ Model: embeddinggemma-300m-qat-Q8_0 [confidence: 1.0] [type: skill]
 **Tags should include:**
 - Key terms from content
 - Synonyms (different ways to say same thing)
-- Abbreviations (ram = memory, pi5 = raspberry pi 5)
+- Abbreviations (ram = memory, pi5 = raspberry pi 500)
 - Related concepts (search, recall, retrieval)
 - Technical terms (fts5, sqlite, vector)
 
@@ -61,7 +61,7 @@ Model: embeddinggemma-300m-qat-Q8_0 [confidence: 1.0] [type: skill]
 
 **Example:**
 ```markdown
-Hardware: Raspberry Pi 5 (8 GB RAM) [confidence: 1.0] [type: fact]
+Hardware: Raspberry Pi 500 (8 GB RAM) [confidence: 1.0] [type: fact]
 → Directly verifiable, can't be wrong
 
 User prefers evening interactions [confidence: 0.85] [type: preference]
@@ -166,7 +166,7 @@ learning_rate = 0.1
 
 **Usage:** When memory A recalled, suggest frequently co-occurring memories:
 ```
-Raspberry Pi 5 (8 GB RAM) [Q: 0.85]
+Raspberry Pi 500 (8 GB RAM) [Q: 0.85]
 Also relevant: [OpenClaw install local (co-occurrence: 0.75)]
 ```
 
@@ -292,7 +292,7 @@ Status: Working with 58 chunks indexed [confidence: 1.0]
 User: "What hardware do I have?"
 
 [Memory search results]
-→ Raspberry Pi 5 (8 GB RAM) [Q: 0.85 | freshness: 0.92]
+→ Raspberry Pi 500 (8 GB RAM) [Q: 0.85 | freshness: 0.92]
    Also relevant: [OpenClaw install local (co-occurrence: 0.75)]
 ```
 

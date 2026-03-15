@@ -217,7 +217,7 @@ tail -50 ~/.openclaw/logs/gateway.log | grep -i plugin
 - RAM: ~500 MB (embeddings) + ~60 MB (plugins) = ~560 MB
 - Disk: ~314 MB (model) + ~18 MB (plugins) = ~332 MB
 
-**On Pi 5 (8 GB RAM):** Plenty of headroom
+**On Pi 500 (8 GB RAM):** Plenty of headroom
 
 ---
 

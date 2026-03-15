@@ -32,7 +32,7 @@ The qdrant-mcp-pi5 repo offers several innovations. The key learnings applied:
 OpenClaw's model is **more capable**:
 - 300M parameters vs 22M parameters
 - 768 dimensions vs 384 dimensions
-- Similar performance characteristics on Pi 5
+- Similar performance characteristics on Pi 500
 
 ---
 

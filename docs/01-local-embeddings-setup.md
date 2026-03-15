@@ -1,19 +1,19 @@
-# Local Embeddings Probe - Raspberry Pi 5
+# Local Embeddings Probe - Raspberry Pi 500
 **Date:** 2026-02-23
-**Goal:** Verify local embeddings can be built and configured safely on Raspberry Pi 5
+**Goal:** Verify local embeddings can be built and configured safely on Raspberry Pi 500
 
 ---
 
 ## Executive Summary
 
-✅ **All checks passed** - Local embeddings are safe to implement on Raspberry Pi 5.
+✅ **All checks passed** - Local embeddings are safe to implement on Raspberry Pi 500.
 
 ### Key Findings
 
 - No Rust compilation needed (prebuilt binaries available)
 - 314MB model downloads from HuggingFace
 - ~500MB RAM when model is loaded
-- Works smoothly on Pi 5 with 8GB RAM
+- Works smoothly on Pi 500 with 8GB RAM
 
 ---
 

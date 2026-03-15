@@ -1,5 +1,5 @@
 #!/bin/bash
-# OpenClaw Fresh Install Script for Raspberry Pi 5
+# OpenClaw Fresh Install Script for Raspberry Pi 500
 # Usage: curl -sL https://raw.githubusercontent.com/ether-btc/openclaw-pi5-setup/main/scripts/openclaw-install.sh | bash
 
 set -e
